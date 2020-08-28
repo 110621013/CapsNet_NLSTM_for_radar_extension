@@ -1,0 +1,56 @@
+timesteps pre_steps
+Test score: [loss, mean_absolute_percentage_error]
+
+{CapsNet+NLSTM}
+15 1
+Test score: [986.350869134064, 13.849042892456055]
+15 5
+Test score: [1105.5559067068968, 14.5156888961792]
+15 10
+Test score: [1124.962856562266, 15.107994079589844]
+15 30
+Test score: [1420.0944874223455, 17.215576171875]
+30 1
+Test score: [1054.3390404438644, 14.624835968017578]
+30 5
+Test score: [1108.7662369645036, 15.085528373718262]
+30 10
+Test score: [1391.6371895192083, 17.81011199951172]
+100 10
+Test score: [1182.6611624018938, 15.616087913513184]
+
+以下參數都是15 10
+{CapsNet+LSTM}
+Test score: [1144.1096947584324, 15.002226829528809]
+
+{CNN+NLSTM}
+Test score: [1710.163296015391, 20.216691970825195]
+
+{CNN+LSTM}
+Test score: [1695.512273548606, 20.343944549560547]
+
+{3DCNN+NLSTM}
+Test score: [1710.5580591258888, 20.252696990966797]
+
+{CapsNet+NLSTM}(all region)
+Test score: [1194.4625402027975, 13.61851692199707]
+
+{CapsNet+NLSTM}(70x70)
+Test score: [1651.2145886482574, 17.139705657958984]
+
+{CapsNet+NLSTM}(deepnest)
+Test score: [1713.9207623327563, 20.298795700073242]
+
+{CapsNet+Bidirectional_LSTM}
+Test score: [1217.276120707803, 15.813376426696777]
+
+{CapsNet+NLSTM}(origin+deepnest)
+Test score: [1649.2430312685608, 17.236948013305664]
+
+{Capsnet+NestedLSTM_origin_sparse}
+???
+
+represented by an image with a size of 164 × 148 for 2 min.In the experiment, the time lag of the input sequence was set to 15, which indicated that the traffic states of the previous 30 min were used as the input of the proposed model. The 30 min historical traffic speeds were used to predict the following 2, 10, and 20 min traffic speeds, which corresponded to the number of the time lags (a, b, c) = (1, 5, 10) in Fig. 6
+The details of our CapsNet+NLSTM deep learning model are shown in Table 1. The input has three dimensions, where the first two dimensions represent the resolution of the input image, and the last dimension indicates the amount of channel of the input image. The model was trained using the optimizer RMSprop (Tieleman and Hinton, 2012). The learning rate was set to 0.001 with 0.5 decay parameter for every 20 epochs, and the batch size was set to 32. A dropout layer was applied to prevent the problem of overfitting (Srivastava et al., 2014), and a fivefold cross-validation was used to determine the parameters of our deep learning model. In the cross validation, the train set was divided into five subsets. Four subsets were used for training, and the remaining subset was used for validation. The optimal model has the lowest average prediction error in all validation datasets.
+用2張164×148尺寸的圖像表示2分鐘。在實驗中，輸入序列的時滯設置為15，這表明前30分鐘的交通狀態被用作建議的輸入模型。 30分鐘的歷史交通速度用於預測以下2分鐘，10分鐘和20分鐘的交通速度，這對應於圖6中的時滯（a，b，c）=（1、5、10）的數量
+CapsNet + NLSTM深度學習模型的詳細信息如表1所示。輸入具有三個維度，其中前兩個維度表示輸入圖像的分辨率，最後一個維度表示輸入圖像的通道數量。使用優化器RMSprop對該模型進行了訓練（Tieleman和Hinton，2012年）。將學習率設置為0.001，每20個週期使用0.5個衰減參數，並且批處理大小設置為32。應用了輟學層來防止過度擬合的問題（Srivastava等人，2014），以及五倍交叉驗證用於確定我們的深度學習模型的參數。在交叉驗證中，訓練集分為五個子集。四個子集用於訓練，其餘子集用於驗證。最佳模型在所有驗證數據集中具有最低的平均預測誤差。
